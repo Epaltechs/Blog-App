@@ -2,13 +2,12 @@ AllCops:
   NewCops: enable
   Exclude:
     - 'db/**/*'
-    - 'Genfile'
-    - 'Genfile.lock'
     - 'bin/*'
     - 'config/**/*'
     - 'Guardfile'
     - 'Rakefile'
     - 'node_modules/**/*'
+    - "vendor/bundle/**/*"
 
   DisplayCopNames: true
 
