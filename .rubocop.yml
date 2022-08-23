@@ -2,6 +2,8 @@ AllCops:
   NewCops: enable
   Exclude:
     - 'db/**/*'
+    - 'Genfile'
+    - 'Genfile.lock'
     - 'bin/*'
     - 'config/**/*'
     - 'Guardfile'
