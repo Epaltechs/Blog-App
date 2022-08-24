@@ -1,5 +1,5 @@
 # Blog-App
-This is an example of a blog website that have a clear path from the browser to the routes file, and to the Controller action. It in effect implements the MVC functionality.
+This is an example of a blog website that have a clear path from the browser to the routes file, and to the Controller action. In effect, it implements the MVC functionality and CRUD.
 
 ## Built With
 - Ruby
