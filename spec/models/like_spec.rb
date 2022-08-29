@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   subject = Like.new
-  user = User.new(name: 'Firdavs', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Weirdo')
-  post = Post.new(title: 'New post came', text: 'Hey buddy are you good!', comments_counter: 0)
+  user = User.new(name: 'Ntakpan', photo: 'https://www.pexels.com/search/flying%20eagle/', bio: 'black')
+  post = Post.new(title: 'New post came', text: 'Hey buddy, I hope are you good!', comments_counter: 0)
 
   before { subject.save }
   before { post.save }

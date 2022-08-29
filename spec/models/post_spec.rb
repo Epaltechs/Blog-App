@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  subject { Post.new(title: 'Wahala', text: 'one challenge at a time') }
+  subject { Post.new(title: 'truth', text: 'you reap what you sow') }
 
   before { subject.save }
 
