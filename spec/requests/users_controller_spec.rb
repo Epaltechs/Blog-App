@@ -13,4 +13,17 @@ RSpec.describe 'Users', type: :request do
       expect(response.body).to include('List of Users')
     end
   end
+
+  describe 'GET #show' do
+    before(:example){get '/users/1'}
+    it 'is a success' do
+      expect(response).to have_http_status(:ok)
+    end
+    it 'renders index template correctly' do
+      expect(response).to render_template('show')
+    end
+    it 'includes correct placeholder text' do
+      expect(response.body).to include('Here is details of Users')
+    end
+  end
 end

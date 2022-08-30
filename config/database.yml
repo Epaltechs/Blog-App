@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: Blog_app_development
+  database: blog_app_development
   host: 127.0.0.1
   username: postgres
   password: Epal4postgres.
@@ -61,7 +61,7 @@ development:
 
 test:
   <<: *default
-  database: Blog_app_test
+  database: blog_app_development
   username: postgres
   password: Epal4postgres.
 

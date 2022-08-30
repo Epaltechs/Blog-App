@@ -52,7 +52,7 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-gem 'childprocess'
+# gem 'childprocess'
 
 gem 'ffi'
 
