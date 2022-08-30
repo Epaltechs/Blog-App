@@ -16,7 +16,7 @@ RSpec.describe 'Posts', type: :request do
     end
   end
   describe 'GET #show' do
-    before(:example){get '/users/1/posts/1'}
+    before(:example) { get '/users/1/posts/1' }
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
