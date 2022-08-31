@@ -4,6 +4,7 @@ class Comment < ApplicationRecord
   after_save :update_comments_counter
 
   private
+  
   #   A method that updates the comments counter for a user.
 
   def update_comments_counter
