@@ -15,7 +15,7 @@ Alternatively, you can just download the complete zip file and extract the folde
 
 ### Step 2:
 In the project directory, you can run:
-> ruby main.rb
+> rails db:create, rails db:migrate and rails db:seed, and this last command will fill the database with the data provided.
 or alternatively you can copy and paste the commands in
 > irb
 
