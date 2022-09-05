@@ -1,24 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  describe 'like model test cases' do
-    before(:each) do
-      @user = User.create(name: 'Emmanuel', photo: 'imagelink', bio: 'Network Enginner')
-      @post = Post.create(user: @user, title: 'sda title', text: 'My textsad s')
-      @like = Like.create(user: @user, post: @post)
-    end
+  subject = Like.new
+  user = User.new(name: 'Firdavs', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Weirdo')
+  post = Post.new(title: 'New post came', text: 'Hey buddy are you good!', comments_counter: 0)
 
-    it 'if post_id is integer' do
-      @like.user_id = 'ss'
-      expect(@like).to_not be_valid
-    end
-    it 'if post_id is integer' do
-      @like.post_id = '123'
-      expect(@like).to_not be_valid
-    end
-    it 'if post_id is integer' do
-      @like.update_like_counter
-      expect(@post.likes_counter).to be(1)
-    end
+  before { subject.save }
+  before { post.save }
+  before { user.save }
+
+  it 'user should be present' do
+    subject.user_id = nil
+    expect(subject).to_not be_valid
+  end
+
+  it 'post should be present' do
+    subject.post_id = nil
+    expect(subject).to_not be_valid
+  end
+
+  it 'user should be correct person' do
+    subject.user_id = user.id
+    expect(subject).to be_truthy
   end
 end

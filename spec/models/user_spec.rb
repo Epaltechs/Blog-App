@@ -20,8 +20,8 @@ RSpec.describe User, type: :model do
       expect(subject).to_not be_valid
     end
 
-    it 'test recent_posts method' do
-      expect(subject.recent_posts.length).to be(0)
-    end
+    # it 'test recent_posts method' do
+    #   expect(subject.recent_posts.length).to be(0)
+    # end
   end
 end
