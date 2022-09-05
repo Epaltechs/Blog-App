@@ -7,7 +7,6 @@ RSpec.describe Post, type: :model do
       @post = Post.new(user: @user, title: 'asd title', text: 'My hello')
     end
 
-
     it 'title should be present' do
       @post.title = nil
       expect(@post).to_not be_valid
