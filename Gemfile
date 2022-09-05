@@ -3,6 +3,20 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+gem 'cancancan'
+
+gem 'htmlbeautifier'
+
+gem 'letter_opener'
+
+# gem 'bullet', group: 'development'
+
+# add device for authentication
+gem 'devise'
+
+# linters installitions
+gem 'rubocop', '>= 1.0', '< 2.0'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
