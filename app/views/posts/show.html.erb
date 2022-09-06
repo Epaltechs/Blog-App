@@ -2,7 +2,7 @@
 <section class="mt-4">
   <div class="border border-dark p-2 mb-2">
     <div class="d-flex justify-content-between">
-      <h3>post #<%= @post.id %> by <%= @post.user.name %></h3>
+      <h3><%= @post.title %> by <%= @post.user.name %></h3>
       <div class="">
         <span>Comments: <%= @post.comments_counter || 0 %> </span>
         <span>, Likes: <%= @post.likes_counter || 0 %></span>
