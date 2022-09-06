@@ -9,12 +9,12 @@ RSpec.describe 'Users', type: :system do
   end
 
   it 'can see profile picture for each user' do
-    visit users_path(@first_user.id)
+    visit "/users/#{@first_user.id}"
     expect(page).to have_selector("img[src*='#{@first_user.photo}']")
   end
 
   it 'shows correct username' do
-    visit users_path(@first_user.id)
+    visit "/users/#{@first_user.id}"
     expect(page).to have_content(@first_user.name)
     expect(page).not_to have_content('Emmanuel')
   end
@@ -22,8 +22,13 @@ RSpec.describe 'Users', type: :system do
   it 'shows number of posts, post counter' do
     Post.create(title: 'Hello', text: 'This is my first post', user: @first_user)
     Post.create(title: 'Hello2', text: 'This is my second post', user: @first_user)
-    visit users_path(@first_user.id)
+    visit "/users/#{@first_user.id}"
     expect(page).to have_content("Number of posts: #{@first_user.posts_counter}")
+  end
+
+  it 'shows user\'s bio ' do
+    visit "/users/#{@first_user.id}"
+    expect(page).to have_content(@first_user.bio)
   end
 
   #   it 'can see profile picture for each user' do
