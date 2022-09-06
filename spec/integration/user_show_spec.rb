@@ -10,8 +10,13 @@ RSpec.describe 'Users', type: :system do
 
   it 'can see profile picture for each user' do
     visit users_path(@first_user.id)
-    sleep(5)
     expect(page).to have_selector("img[src*='#{@first_user.photo}']")
+  end
+
+  it 'shows correct username' do
+    visit users_path(@first_user.id)
+    expect(page).to have_content(@first_user.name)
+    expect(page).not_to have_content('Emmanuel')
   end
 
   #   it 'can see profile picture for each user' do
