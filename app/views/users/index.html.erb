@@ -1,20 +1,14 @@
 <section style="" class="users my-5">
   <% @users.each do |user| %>
-  <div class="user py-3">
+    <div class="user py-3">
       <div>
-              <img src="<%= user.photo %>" alt='User Avatar' style="width:90%" />
+        <img src="<%= user.photo %>" alt='User Avatar' style="width:90%" />
       </div>
-
       <div>
-        <div>
-              <h1 class="display-3 ">
-                      <a href="<%=user_path(user.id)%>">
-                          <%= user.name %>
-                      </a>
-              </h1>
-          </div>
-                <p style="margin-top:">Number of posts: <%= user.posts_counter || 0 %></p>
+        <h1 class="display-3 "><%= user.name %></h1>
+        <p style="margin-top:">Number of posts: <%= user.posts_counter || 0 %></p>
+        <%= link_to "Read More", user_path(user.id), class: "link-to" %>
       </div>
-  </div>
+    </div>
   <%end%>
 </section>
