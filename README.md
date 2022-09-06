@@ -28,10 +28,6 @@ or alternatively you can copy and paste the commands in
 - AngeList: [Emmanuel Paul](https://angel.co/u/emmanuel-s-paul)
 
 :bust_in_silhouette: **Huseyin Biyik**
-<<<<<<< HEAD
-=======
-
->>>>>>> 1fe6f926be9736272927618914f66d2f06f2d3ce
 - GitHub: [@huseyinbiyik](https://github.com/huseyinbiyik)
 - Twitter: [@huseyin__biyik](https://twitter.com/huseyin__biyik)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/huseyin-b%C4%B1y%C4%B1k/)
