@@ -19,6 +19,13 @@ RSpec.describe 'Users', type: :system do
     expect(page).not_to have_content('Emmanuel')
   end
 
+  it 'shows number of posts, post counter' do
+    Post.create(title: 'Hello', text: 'This is my first post', user: @first_user)
+    Post.create(title: 'Hello2', text: 'This is my second post', user: @first_user)
+    visit users_path(@first_user.id)
+    expect(page).to have_content("Number of posts: #{@first_user.posts_counter}")
+  end
+
   #   it 'can see profile picture for each user' do
   #   expect(page.find('#profile-avatar')['alt']).to eq('random image')
   # end
