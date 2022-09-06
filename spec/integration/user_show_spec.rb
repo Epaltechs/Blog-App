@@ -40,11 +40,16 @@ RSpec.describe 'Users', type: :system do
                              user: @first_user)
     fourth_post = Post.create(title: 'Mr', text: 'Greetings!', likes_counter: 3, comments_counter: 3, user: @first_user)
     visit "/users/#{@first_user.id}"
-    sleep(5)
     expect(page).to have_content(second_post.text)
     expect(page).to have_content(third_post.text)
     expect(page).to have_content(fourth_post.text)
     expect(page).not_to have_content(first_post.text)
+  end
+
+  it 'directs you the users profile page' do
+    visit "/users/#{@first_user.id}"
+    click_link 'See all posts'
+    expect(page).to have_current_path("/users/#{@first_user.id}/posts")
   end
 
   #   it 'can see profile picture for each user' do
