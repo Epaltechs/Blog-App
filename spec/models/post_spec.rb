@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   describe 'post test cases validations' do
     before(:each) do
-      @user = User.new(name: 'Emmanuel', photo: 'imagelink', bio: 'Network Enginner')
+      @user = User.new(name: 'omar', photo: 'imagelink', bio: 'software enginner')
       @post = Post.new(user: @user, title: 'asd title', text: 'My hello')
     end
 
