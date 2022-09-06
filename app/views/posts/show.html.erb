@@ -2,7 +2,7 @@
 <section class="mt-4">
   <div class="border border-dark p-2 mb-2">
     <div class="d-flex justify-content-between">
-      <h3>post #<%= @post.id %> by <%= @post.user.name %></h3>
+      <h3><%= @post.title %> by <%= @post.user.name %></h3>
       <div class="">
         <span>Comments: <%= @post.comments_counter || 0 %> </span>
         <span>, Likes: <%= @post.likes_counter || 0 %></span>
@@ -11,9 +11,8 @@
     <p><%= @post.text%></p>
     <div class="react-bar mt-2 d-flex justify-content-between">
       <%= form_with model: @new_like, url: user_post_path(post_id: @post.id)  do |form|  %>
-        <%= form.submit "Add like 💪🏾" ,class: "react-btn" %>
+        <%= form.submit "Add like " ,class: "react-btn" %>
       <% end %>
-      <%= link_to "Add comment 💬", new_user_post_comment_path(user_id: @post.user_id, post_id: @post.id ) %>
     </div>
   </div>
   <ul class="comments">

@@ -15,7 +15,7 @@
     <% @posts.each_with_index do |post,index| %>
       <a href="posts/<%= post.id%>">
         <div class="border border-dark p-2 mb-2">
-          <h3>post #<%= index+1 %></h3>
+          <h3><%= post.title %></h3>
           <p><%= post.text%></p>
           <div class="d-flex justify-content-end">
             <span>Comments: <%= post.comments_counter || 0 %> </span>
@@ -32,3 +32,4 @@
     <% end %>
   </div>
 </section>
+<button>Pagination</button>

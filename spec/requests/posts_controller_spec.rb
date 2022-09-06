@@ -24,7 +24,7 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to render_template('show')
     end
     it 'includes correct placeholder text' do
-      expect(response.body).to include('Here is details of posts for a given user')
+      expect(response.body).to include('Here are the details of posts for a given user')
     end
   end
 end
