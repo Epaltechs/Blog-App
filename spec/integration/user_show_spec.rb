@@ -40,47 +40,23 @@ RSpec.describe 'Users', type: :system do
                              user: @first_user)
     fourth_post = Post.create(title: 'Mr', text: 'Greetings!', likes_counter: 3, comments_counter: 3, user: @first_user)
     visit "/users/#{@first_user.id}"
-    sleep(5)
     expect(page).to have_content(second_post.text)
     expect(page).to have_content(third_post.text)
     expect(page).to have_content(fourth_post.text)
     expect(page).not_to have_content(first_post.text)
   end
 
-  #   it 'can see profile picture for each user' do
-  #   expect(page.find('#profile-avatar')['alt']).to eq('random image')
-  # end
-  # it "can see user's username" do
-  #   user = User.first
-  #   expect(page).to have_text(user.name)
-  # end
-  # it 'can see the number of posts the user has written' do
-  #   user = User.first
-  #   expect(page).to have_text(user.posts.count)
-  # end
-  # it "can see the user's bio" do
-  #   user = User.first
-  #   expect(page).to have_text(user.bio)
-  # end
-  # it "should see user's three posts" do
-  #   user = User.first
-  #   user.posts.limit(3).each do |i|
-  #     expect(page).to have_text(i.text)
-  #   end
-  # end
-  # it 'can see a button that lets see all the posts' do
-  #   expect(page).to have_text('See all posts')
-  # end
-  # it "When I click a user's post, it redirects me to that post's show page" do
-  #   user = User.first
-  #   user.posts.each do |i|
-  #     click_link "Post ##{i.id}"
-  #     expect(page).to have_current_path("/users/#{user.id}/posts/#{i.id}")
-  #   end
-  # end
-  # it "When I click to see all posts, it redirects me to the user's post's index page" do
-  #   user = User.first
-  #   click_link 'See all posts'
-  #   expect(page).to have_current_path("/users/#{user.id}/posts")
-  # end
+  it 'directs you the users profile page' do
+    visit "/users/#{@first_user.id}"
+    click_link 'See all posts'
+    expect(page).to have_current_path("/users/#{@first_user.id}/posts")
+  end
+
+  it 'redirects me to that post\'s show page' do
+    first_post = Post.create(title: 'Mr', text: 'Hello there!', likes_counter: 0, comments_counter: 0,
+                             user: @first_user)
+    visit "/users/#{@first_user.id}"
+    click_on first_post.title
+    expect(page).to have_current_path("/users/#{@first_user.id}/posts/#{first_post.id}")
+  end
 end
