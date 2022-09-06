@@ -8,11 +8,16 @@ RSpec.describe 'Users', type: :system do
                                posts_counter: 2)
   end
   describe 'index page' do
-    it 'shows the right content' do
+    it 'shows correct username' do
       visit users_path
       sleep(5)
       expect(page).to have_content(@first_user.name)
       expect(page).not_to have_content('Emmanuel')
+    end
+
+    it 'can see profile picture for each user' do
+      visit users_path
+      expect(page).to have_selector("img[src*='#{@first_user.photo}']")
     end
 
     # it 'shows the number of posts each user has written' do
@@ -24,9 +29,5 @@ RSpec.describe 'Users', type: :system do
     #     expect(page).to have_current_path("/users/#{i.id}")
     #   end
     # end
-    # it 'can see profile picture for each user' do
-    #   User.all.each do |_i|
-    #     expect(page.find('#profile-avatar')['alt']).to eq('random image')
-    #   end
   end
 end
