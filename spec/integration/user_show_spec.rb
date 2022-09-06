@@ -31,6 +31,22 @@ RSpec.describe 'Users', type: :system do
     expect(page).to have_content(@first_user.bio)
   end
 
+  it 'shows three recent posts' do
+    first_post = Post.create(title: 'Mr', text: 'Hello there!', likes_counter: 0, comments_counter: 0,
+                             user: @first_user)
+    second_post = Post.create(title: 'Mr', text: 'Hey friend!', likes_counter: 1, comments_counter: 1,
+                              user: @first_user)
+    third_post = Post.create(title: 'Mr', text: 'So good to connect with you!', likes_counter: 2, comments_counter: 2,
+                             user: @first_user)
+    fourth_post = Post.create(title: 'Mr', text: 'Greetings!', likes_counter: 3, comments_counter: 3, user: @first_user)
+    visit "/users/#{@first_user.id}"
+    sleep(5)
+    expect(page).to have_content(second_post.text)
+    expect(page).to have_content(third_post.text)
+    expect(page).to have_content(fourth_post.text)
+    expect(page).not_to have_content(first_post.text)
+  end
+
   #   it 'can see profile picture for each user' do
   #   expect(page.find('#profile-avatar')['alt']).to eq('random image')
   # end
