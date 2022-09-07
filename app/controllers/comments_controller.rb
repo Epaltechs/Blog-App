@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
       render :new, alert: 'An error has occurred while deleting the comment'
     end
   end
-  
+
   private
 
   def comment_params
