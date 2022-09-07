@@ -17,9 +17,7 @@
   <div class='posts mt-5'>
     <% @user.recent_posts.each_with_index do |post,index| %>
       <div class="post p-2 mb-4">
-        <a href="/users/<%= @user.id%>/posts/<%= post.id %>">
         <h3 class="display-6"><%= post.title %></h3>
-        </a>
         <p><%= post.text%></p>
         <small><%= link_to "Details", user_post_path(@user.id,post.id), class: "link-to"%></small>
         <div class="d-flex justify-content-end">
