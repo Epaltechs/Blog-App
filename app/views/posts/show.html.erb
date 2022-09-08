@@ -14,7 +14,7 @@
         <%= form.submit "Add like " ,class: "react-btn" %>
       <% end %>
       <%= link_to "Comment 💬", new_user_post_comment_path(user_id: @post.user_id, post_id: @post.id), class: "link-react" %>
-      <% if can? :destory, @post%>
+      <% if can? :destroy, @post%>
         <%= button_to "Delete 🗑️", user_post_path(user_id:@post.user_id,id: @post.id) ,method: :delete, class: "react-btn" %>
       <% end %>
     </div>
