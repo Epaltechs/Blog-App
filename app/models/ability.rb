@@ -9,7 +9,8 @@ class Ability
     can :read, :all if user.role == 'user'
     can :manage, Post, user_id: user.id
     can :manage, Comment, user_id: user.id
-
+    can :add, Comment
+    can :add, Like
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
