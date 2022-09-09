@@ -79,6 +79,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+gem 'rswag'
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
