@@ -4,6 +4,44 @@ info:
   title: API V1
   version: v1
 paths:
+  "/api/users/{id}/posts":
+    get:
+      summary: Get all posts
+      tags:
+      - Posts
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: posts found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/Post"
+  "/api/users/{id}/posts/{id}":
+    get:
+      summary: Get post by id
+      tags:
+      - Posts
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: post found
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Post"
   "/api/users":
     get:
       summary: Get all users
