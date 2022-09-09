@@ -5,6 +5,8 @@ ruby '3.1.2'
 
 gem 'cancancan'
 
+gem 'jwt'
+
 gem 'htmlbeautifier'
 
 gem 'letter_opener'
