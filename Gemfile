@@ -9,6 +9,8 @@ gem 'htmlbeautifier'
 
 gem 'letter_opener'
 
+gem 'jwt', '~> 1.5', '>= 1.5.4'
+
 # gem 'bullet', group: 'development'
 
 # add device for authentication
