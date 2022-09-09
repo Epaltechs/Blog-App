@@ -5,11 +5,11 @@ ruby '3.1.2'
 
 gem 'cancancan'
 
+gem 'jwt'
+
 gem 'htmlbeautifier'
 
 gem 'letter_opener'
-
-gem 'jwt', '~> 1.5', '>= 1.5.4'
 
 # gem 'bullet', group: 'development'
 
