@@ -4,6 +4,43 @@ info:
   title: API V1
   version: v1
 paths:
+  "/api/users/{id}/posts/{id}/comments":
+    get:
+      summary: Get all comments
+      tags:
+      - Comments
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: comments found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/Comment"
+    post:
+      summary: Create a comment
+      tags:
+      - Comments
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: comment created
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Comment"
   "/api/users/{id}/posts":
     get:
       summary: Get all posts
