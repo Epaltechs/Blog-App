@@ -7,6 +7,8 @@ This is an example of a blog website that have a clear path from the browser to 
 ## Built With
 - Ruby
 - Ruby on Rails
+- Postgresql
+- Bootstrap
 
 ## Getting Started
 To launch the project locally:
