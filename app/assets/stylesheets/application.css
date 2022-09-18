@@ -1,0 +1,117 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+:root {
+  --primary: #ddd;
+  --dark: rgb(211, 102, 0);
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --link: #758085;
+  --comment: 6%;
+}
+
+.users {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6%;
+  padding-bottom: 50px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.post {
+  box-shadow: var(--shadow);
+}
+
+.link-to {
+  text-decoration: underline;
+  color: var(--link);
+}
+
+a.link-to:hover {
+  color: var(--link);
+}
+
+.link-react {
+  color: var(--link);
+  cursor: pointer;
+}
+
+a.link-react:hover {
+  color: var(--link);
+}
+
+.post .value {
+  color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-area {
+  height: 150px;
+}
+
+.react-btn {
+  all: unset;
+  cursor: pointer;
+  color: var(--link);
+}
+
+.home-blog {
+  color: var(--link);
+}
+
+.react-btn:hover,
+.react-bar a:hover,
+.home-blog:hover {
+  color: var(--dark);
+}
+
+.nav-list {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.com-del {
+  color: rgb(211, 26, 26);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  width: 500px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 500px;
+}
+
+@media (max-width: 700px) {
+  :root {
+    --comment: 12%;
+  }
+}

@@ -1,0 +1,41 @@
+<h1>Here are the details of posts for a given user<h1>
+<section class="mt-4">
+  <div class="border border-dark p-2 mb-2">
+    <div class="d-flex justify-content-between">
+      <h3><%= @post.title %> by <%= @post.user.name %></h3>
+      <div class="">
+        <span>Comments: <%= @post.comments_counter || 0 %> </span>
+        <span>, Likes: <%= @post.likes_counter || 0 %></span>
+      </div>
+    </div>
+      <p><%= @post.text%></p>
+    <div class="react-bar mt-2 d-flex justify-content-between">
+      <%= form_with model: @new_like, url: user_post_path(post_id: @post.id)  do |form|  %>
+        <%= form.submit "Add like " ,class: "react-btn" %>
+      <% end %>
+      <%= link_to "Comment 💬", new_user_post_comment_path(user_id: @post.user_id, post_id: @post.id), class: "link-react" %>
+      <% if can? :destroy, @post%>
+        <%= button_to "Delete 🗑️", user_post_path(user_id:@post.user_id,id: @post.id) ,method: :delete, class: "react-btn" %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+  <div class="comments">
+    <% if @comments.length > 0 %>
+      Responses (<%= @comments.length %>)
+    <% end %>
+    <% @comments.includes(:user).each do |comment|%>
+      <div class="d-flex flex-row py-1">
+        <div style="width: var(--comment);"><img src="<%= comment.user.photo%>" style="width:100%" alt="user avater"/></div>
+        <div class="">
+          <div><span class="fw-bold"><%= comment.user.name %> </span> says: </div>
+          <div> <%= comment.text %></div>
+
+          <% if can? :destory, comment%>
+            <%= button_to "Delete 🗑️", user_post_comment_path(user_id:comment.user_id,post_id: comment.post_id,id:comment.id) ,method: :delete, class: "react-btn com-del" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
