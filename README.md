@@ -15,7 +15,7 @@ To launch the project locally:
 
 ### Step 1:
 Clone this repo locally using git in the command line and the following command
-> https://github.com/Epaltechs/Blog-app.git
+> https://github.com/Epaltechs/blog-app.git
 Alternatively, you can just download the complete zip file and extract the folder in your directory
 
 ### Step 2:
