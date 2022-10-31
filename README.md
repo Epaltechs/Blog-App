@@ -4,6 +4,9 @@ This is an example of a blog website that have a clear path from the browser to 
 ## Schema
 ![](https://github.com/microverseinc/curriculum-rails/blob/main/blog-app/images/blog_app_erd.png)
 
+## Deployment
+[Heroku](https://epal-blog-app.herokuapp.com/)
+
 ## Built With
 - Ruby
 - Ruby on Rails
@@ -13,8 +16,6 @@ This is an example of a blog website that have a clear path from the browser to 
 ## Getting Started
 To launch the project locally:
 
-## Deployment
-[Heroku](https://epal-blog-app.herokuapp.com/)
 
 ### Step 1:
 Clone this repo locally using git in the command line and the following command
