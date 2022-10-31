@@ -13,6 +13,9 @@ This is an example of a blog website that have a clear path from the browser to 
 ## Getting Started
 To launch the project locally:
 
+## Deployment
+[Heroku](https://epal-blog-app.herokuapp.com/)
+
 ### Step 1:
 Clone this repo locally using git in the command line and the following command
 > https://github.com/Epaltechs/blog-app.git
